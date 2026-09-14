@@ -1,9 +1,9 @@
 {
   "id": "a-my-island",
   "name": "A-My-Island",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "minAppVersion": "1.11.4",
-  "description": "Build and maintain an interactive personal island workspace in Obsidian.",
+  "description": "Build and maintain an interactive personal island workspace.",
   "author": "全平台：岛民Vin",
   "isDesktopOnly": true
 }
