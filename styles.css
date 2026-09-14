@@ -12520,11 +12520,26 @@
   line-height: 1.7;
 }
 
+.a-my-island-view .a-my-island-license-purchase-link {
+  display: block;
+  width: fit-content;
+  margin: 14px auto 0;
+  color: var(--link-color);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.a-my-island-view .a-my-island-license-purchase-link:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+
 .a-my-island-view .a-my-island-license-form {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .a-my-island-view .a-my-island-license-input {
@@ -12565,6 +12580,11 @@
   background: #63aa92;
 }
 
+.a-my-island-view .a-my-island-license-settings-button {
+  display: block;
+  margin: 12px auto 0;
+}
+
 .a-my-island-view .a-my-island-license-button:disabled,
 .a-my-island-view .a-my-island-license-input:disabled {
   cursor: not-allowed;
@@ -12580,11 +12600,11 @@
 
 @media (max-width: 680px) {
   .a-my-island-view .a-my-island-license-form {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .a-my-island-view .a-my-island-license-input {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 }
 
