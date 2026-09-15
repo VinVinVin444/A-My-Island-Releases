@@ -1,0 +1,9 @@
+{
+  "packageId": "a-my-island-core-assets-dialogues",
+  "latestVersion": "1.0.0",
+  "base": {
+    "version": "1.0.0",
+    "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-dialogues-v1.0.0/core-assets-dialogues-v1.0.0.manifest.json"
+  },
+  "patches": []
+}
