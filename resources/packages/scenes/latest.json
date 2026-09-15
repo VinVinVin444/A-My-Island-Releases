@@ -1,0 +1,9 @@
+{
+  "packageId": "a-my-island-core-assets-scenes",
+  "latestVersion": "1.0.0",
+  "base": {
+    "version": "1.0.0",
+    "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-scenes-v1.0.0/core-assets-scenes-v1.0.0.manifest.json"
+  },
+  "patches": []
+}
