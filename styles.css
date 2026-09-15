@@ -11246,9 +11246,8 @@
   display: block;
   min-height: 54px;
   max-height: 54px;
-  padding: 6px 28px 12px 6px;
+  padding: 0;
   overflow: hidden;
-  resize: none;
   user-select: text;
   cursor: text;
   border-bottom-color: rgb(96 64 31 / 20%);
@@ -11257,6 +11256,45 @@
   font-weight: 950;
   line-height: 1.35;
   text-align: center;
+}
+
+.a-my-island-view .a-my-island-memo-title-input .cm-editor {
+  height: 100%;
+  background: transparent;
+  color: #60401f;
+  font-family: var(--font-interface);
+  font-size: 23px;
+  font-weight: 950;
+}
+
+.a-my-island-view .a-my-island-memo-title-input .cm-editor.cm-focused {
+  outline: 0;
+}
+
+.a-my-island-view .a-my-island-memo-title-input .cm-scroller {
+  overflow: hidden;
+  font-family: var(--font-interface);
+  line-height: 1.35;
+}
+
+.a-my-island-view .a-my-island-memo-title-input .cm-content {
+  min-height: 100%;
+  padding: 6px 28px 12px 6px;
+  caret-color: #60401f;
+  text-align: center;
+}
+
+.a-my-island-view .a-my-island-memo-title-input .cm-cursor,
+.a-my-island-view .a-my-island-memo-title-input .cm-dropCursor {
+  display: block !important;
+  visibility: visible !important;
+  z-index: 12;
+  border-left: 2px solid #60401f !important;
+}
+
+.a-my-island-view .a-my-island-memo-title-input .cm-cursorLayer {
+  z-index: 12;
+  pointer-events: none;
 }
 
 .a-my-island-view .a-my-island-memo-content-input {
@@ -11279,7 +11317,7 @@
   background-color: rgb(255 250 225 / 4%) !important;
 }
 
-.a-my-island-view .a-my-island-memo-title-input:focus,
+.a-my-island-view .a-my-island-memo-title-input:focus-within,
 .a-my-island-view .a-my-island-memo-content-input:focus {
   border-color: rgb(98 158 129 / 56%);
   background-color: rgb(255 250 225 / 6%) !important;
@@ -11374,8 +11412,8 @@
   pointer-events: none;
 }
 
-.a-my-island-view .a-my-island-memo-content-editor
-  .cm-content:empty::before {
+.a-my-island-view .a-my-island-memo-title-input .cm-content:empty::before,
+.a-my-island-view .a-my-island-memo-content-editor .cm-content:empty::before {
   color: rgb(96 64 31 / 44%);
   content: attr(data-placeholder);
   pointer-events: none;
