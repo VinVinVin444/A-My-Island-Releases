@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "packages": [
+    {
+      "root": "avatars",
+      "indexUrl": "https://raw.githubusercontent.com/VinVinVin444/A-My-Island-Releases/main/resources/packages/avatars/latest.json"
+    },
+    {
+      "root": "characters",
+      "indexUrl": "https://raw.githubusercontent.com/VinVinVin444/A-My-Island-Releases/main/resources/packages/characters/latest.json"
+    },
+    {
+      "root": "dialogues",
+      "indexUrl": "https://raw.githubusercontent.com/VinVinVin444/A-My-Island-Releases/main/resources/packages/dialogues/latest.json"
+    },
+    {
+      "root": "home-entries",
+      "indexUrl": "https://raw.githubusercontent.com/VinVinVin444/A-My-Island-Releases/main/resources/packages/home-entries/latest.json"
+    },
+    {
+      "root": "scenes",
+      "indexUrl": "https://raw.githubusercontent.com/VinVinVin444/A-My-Island-Releases/main/resources/packages/scenes/latest.json"
+    }
+  ]
+}
