@@ -199,7 +199,7 @@
   grid-template-rows: auto minmax(0, 1fr);
   top: 50%;
   left: 50%;
-  width: min(var(--a-my-island-tutorial-width, 720px), calc(100% - 16px));
+  width: min(var(--a-my-island-tutorial-width, 960px), calc(100% - 16px));
   height: min(var(--a-my-island-tutorial-height, 640px), calc(100% - 16px));
   overflow: hidden;
   border: 4px solid #fff9df;
@@ -289,73 +289,178 @@
 }
 
 .a-my-island-view .a-my-island-tutorial-content {
+  display: grid;
+  grid-template-columns: max-content max-content minmax(320px, 1fr);
   min-width: 0;
   min-height: 0;
-  padding: 20px 24px 34px;
-  overflow: auto;
+  overflow: auto hidden;
   scrollbar-color: rgb(113 139 80 / 50%) transparent;
 }
 
-.a-my-island-view .a-my-island-tutorial-intro {
-  margin-bottom: 16px;
-  padding: 13px 16px;
-  border: 2px solid rgb(229 153 91 / 22%);
-  border-radius: 16px;
-  background: rgb(255 248 221 / 76%);
-  color: #76502d;
-  font-size: 14px;
-  line-height: 1.65;
+.a-my-island-view .a-my-island-tutorial-category-column,
+.a-my-island-view .a-my-island-tutorial-article-column {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: max-content;
+  min-width: max-content;
+  min-height: 0;
+  padding: 16px 12px 28px;
+  border-right: 1px solid rgb(120 100 57 / 18%);
+  background: rgb(255 250 225 / 48%);
 }
 
-.a-my-island-view .a-my-island-tutorial-section {
-  margin-top: 14px;
-  padding: 14px 16px 15px;
-  border: 2px solid rgb(112 143 83 / 22%);
-  border-radius: 19px;
-  background: rgb(255 253 239 / 78%);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 80%);
+.a-my-island-view .a-my-island-tutorial-article-column {
+  background: rgb(250 244 213 / 44%);
 }
 
-.a-my-island-view .a-my-island-tutorial-section-title {
+.a-my-island-view .a-my-island-tutorial-column-title {
+  padding: 0 8px 10px;
+  color: #9a7042;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.a-my-island-view .a-my-island-tutorial-category-list,
+.a-my-island-view .a-my-island-tutorial-article-list {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.a-my-island-view .a-my-island-tutorial-category-item,
+.a-my-island-view .a-my-island-tutorial-navigation-item {
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 42px;
   align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
-  color: #517044;
-  font-size: 17px;
-  font-weight: 900;
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  outline: 0;
+  background: #fff4d5;
+  color: #76502d;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 72%);
+  font-family: var(--font-interface);
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.25;
+  text-align: left;
+  white-space: nowrap;
 }
 
-.a-my-island-view .a-my-island-tutorial-section-icon {
+.a-my-island-view .a-my-island-tutorial-category-item:is(:hover, :focus-visible),
+.a-my-island-view .a-my-island-tutorial-navigation-item:is(:hover, :focus-visible) {
+  border-color: rgb(111 153 94 / 38%);
+  background: #f2efc8;
+  box-shadow: 0 0 0 3px rgb(111 153 94 / 12%);
+}
+
+.a-my-island-view .a-my-island-tutorial-category-item.is-active,
+.a-my-island-view .a-my-island-tutorial-navigation-item.is-active {
+  border-color: rgb(226 139 77 / 48%);
+  background: #ffe0ad;
+  color: #78431f;
+  box-shadow: 0 4px 10px rgb(112 76 39 / 12%);
+}
+
+.a-my-island-view .a-my-island-tutorial-category-icon {
   display: grid;
-  width: 29px;
-  height: 29px;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
   place-items: center;
-  border-radius: 10px;
-  background: #eef4c9;
+  border-radius: 9px;
+  background: rgb(255 255 255 / 62%);
   font-size: 16px;
 }
 
-.a-my-island-view .a-my-island-tutorial-list {
-  display: grid;
-  gap: 9px;
+.a-my-island-view .a-my-island-tutorial-category-copy {
+  display: block;
+  text-align: left;
 }
 
-.a-my-island-view .a-my-island-tutorial-item {
-  display: grid;
-  grid-template-columns: minmax(170px, 0.8fr) minmax(240px, 1.5fr);
-  align-items: center;
-  gap: 12px;
-  padding: 9px 11px;
+.a-my-island-view .a-my-island-tutorial-category-name {
+  display: block;
+  white-space: nowrap;
+}
+
+.a-my-island-view .a-my-island-tutorial-category-description {
+  display: none;
+}
+
+.a-my-island-view .a-my-island-tutorial-detail-column {
+  min-width: 320px;
+  min-height: 0;
+  padding: 18px 22px 34px;
+  overflow: auto;
+  background: rgb(255 253 239 / 58%);
+  scrollbar-width: thin;
+}
+
+.a-my-island-view .a-my-island-tutorial-breadcrumb {
+  margin-bottom: 8px;
+  color: #9a7042;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.a-my-island-view .a-my-island-tutorial-detail-title {
+  color: #4f7043;
+  font-size: 22px;
+  font-weight: 950;
+  line-height: 1.3;
+}
+
+.a-my-island-view .a-my-island-tutorial-detail-summary {
+  margin-top: 8px;
+  padding: 11px 13px;
+  border: 1px solid rgb(229 153 91 / 24%);
   border-radius: 13px;
-  background: rgb(250 244 213 / 62%);
+  background: rgb(255 246 213 / 74%);
+  color: #7a684e;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
-.a-my-island-view .a-my-island-tutorial-item-main {
+.a-my-island-view .a-my-island-tutorial-detail-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.a-my-island-view .a-my-island-tutorial-detail-item {
+  padding: 12px 14px;
+  border: 1px solid rgb(112 143 83 / 20%);
+  border-radius: 15px;
+  background: rgb(255 253 239 / 82%);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 84%);
+}
+
+.a-my-island-view .a-my-island-tutorial-detail-item-heading {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 7px;
+  margin-bottom: 7px;
+}
+
+.a-my-island-view .a-my-island-tutorial-step-index {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ef9b63;
+  color: #fffdf0;
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .a-my-island-view .a-my-island-tutorial-item-label {
@@ -390,6 +495,10 @@
   line-height: 1.55;
 }
 
+.a-my-island-view .a-my-island-tutorial-item-detail + .a-my-island-tutorial-item-detail {
+  margin-top: 12px;
+}
+
 .a-my-island-view .a-my-island-tutorial-resize-handle {
   position: absolute;
   right: 8px;
@@ -420,9 +529,8 @@
     padding: 74px 8px 86px;
   }
 
-  .a-my-island-view .a-my-island-tutorial-item {
-    grid-template-columns: 1fr;
-    gap: 5px;
+  .a-my-island-view .a-my-island-tutorial-content {
+    grid-template-columns: max-content max-content minmax(300px, 1fr);
   }
 }
 
