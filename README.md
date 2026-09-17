@@ -2,6 +2,51 @@
 
 把个人计划、节点关系、表格、场景、角色与常用工具集中到一座可互动的小岛中。
 
+## 界面预览
+
+### 节点界面
+
+<p align="center">
+  <img src="assets/a-my-island-node-1.png" alt="A-My-Island 节点界面一" width="49%">
+  <img src="assets/a-my-island-node-2.png" alt="A-My-Island 节点界面二" width="49%">
+</p>
+
+<p align="center">
+  <img src="assets/a-my-island-node-3.png" alt="A-My-Island 节点界面三" width="49%">
+  <img src="assets/a-my-island-node-4.png" alt="A-My-Island 节点界面四" width="49%">
+</p>
+
+<p align="center">
+  <img src="assets/a-my-island-node-5.png" alt="A-My-Island 节点界面五" width="49%">
+  <img src="assets/a-my-island-node-6.png" alt="A-My-Island 节点界面六" width="49%">
+</p>
+
+<p align="center">
+  <img src="assets/a-my-island-node-7.png" alt="A-My-Island 节点界面七" width="100%">
+</p>
+
+### 手机界面
+
+<p align="center">
+  <img src="assets/a-my-island-phone-memo.png" alt="A-My-Island 手机备忘录界面" width="49%">
+  <img src="assets/a-my-island-phone-pomodoro.png" alt="A-My-Island 手机番茄钟界面" width="49%">
+</p>
+
+<p align="center">
+  <img src="assets/a-my-island-phone-diary-1.png" alt="A-My-Island 手机日记界面一" width="49%">
+  <img src="assets/a-my-island-phone-diary-2.png" alt="A-My-Island 手机日记界面二" width="49%">
+</p>
+
+<p align="center">
+  <img src="assets/a-my-island-phone-video.png" alt="A-My-Island 手机视频界面" width="49%">
+  <img src="assets/a-my-island-phone-gallery.png" alt="A-My-Island 手机相册界面" width="49%">
+</p>
+
+<p align="center">
+  <img src="assets/a-my-island-phone-game.png" alt="A-My-Island 手机游戏界面" width="100%">
+</p>
+
+
 ## 主要功能
 
 - 使用 Cytoscape.js 构建可分层浏览、连线和聚焦的可视化节点画布。
