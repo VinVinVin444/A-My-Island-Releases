@@ -32,3 +32,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## God rays shader
+
+The sunlight WebGL shader adapts the ray-field and two-layer procedural-noise approach from **“God rays” by pend00**. The original shader is published under CC0 1.0. This plugin contains a WebGL GLSL port and does not include Godot, Godot-specific code, or the page's preview assets.
+
+Source: [Godot Shaders — God rays](https://godotshaders.com/shader/god-rays/)
+
+Author: pend00
+
+License: [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
