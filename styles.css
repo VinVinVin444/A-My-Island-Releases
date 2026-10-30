@@ -73,6 +73,23 @@
   pointer-events: none;
 }
 
+.a-my-island-view > .a-my-island-detail-overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 13000;
+  pointer-events: none;
+}
+.a-my-island-view > .a-my-island-detail-overlay-layer > * {
+  pointer-events: auto;
+}
+.a-my-island-view > .a-my-island-workspace:is(.is-layer-switching, .is-layer-target-pending, .is-layer-source-fading, .is-history-restoring) + .a-my-island-detail-overlay-layer {
+  visibility: hidden;
+  pointer-events: none;
+}
+.a-my-island-view > .a-my-island-workspace.is-child-details-visible + .a-my-island-detail-overlay-layer > .a-my-island-work-todos {
+  right: 628px;
+}
+
 .a-my-island-view
   > .a-my-island-persistent-interface-layer
   > :is(
@@ -7896,6 +7913,10 @@
 
 .a-my-island-work-details.is-hidden {
   display: none;
+}
+
+.a-my-island-view .a-my-island-home-route-details {
+  z-index: 10010;
 }
 .a-my-island-view .a-my-island-work-details.is-text-detail-tab,
 .a-my-island-view .a-my-island-work-details.is-image-detail-tab,
