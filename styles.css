@@ -27648,3 +27648,19 @@
 .a-my-island-view .a-my-island-environment-single-column-scene > .a-my-island-background-scene-levels,
 .a-my-island-view .a-my-island-environment-single-column-scene > .a-my-island-background-scene-layered-controls,
 .a-my-island-view .a-my-island-environment-single-column-scene > .a-my-island-background-scene-tuning { box-sizing: border-box; width: 100%; }
+.a-my-island-view .a-my-island-work-details.is-route-detail-tab > .a-my-island-work-multi-panel-tabs,
+.a-my-island-view .a-my-island-home-route-details > .a-my-island-work-multi-panel-tabs {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.a-my-island-view .a-my-island-route-adjust-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
+  border: 1px solid rgb(135 113 73 / 24%);
+  border-radius: 12px;
+  background: rgb(255 251 237 / 70%);
+}
