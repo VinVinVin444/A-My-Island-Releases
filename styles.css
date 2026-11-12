@@ -5869,6 +5869,46 @@
   pointer-events: auto;
   transform: translateY(-100%);
 }
+.a-my-island-view .a-my-island-work-background-group-state-icons {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+.a-my-island-view .a-my-island-work-background-group-state-icons.is-hidden {
+  display: none;
+}
+.a-my-island-view .a-my-island-work-background-group-state-icon {
+  display: none;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d59a42;
+  border-radius: 8px;
+  background: rgb(255 249 223 / 90%);
+  color: #7c5a2c;
+  box-shadow: 0 2px 4px rgb(96 67 31 / 18%);
+}
+.a-my-island-view .a-my-island-work-background-group-state-icon.is-active {
+  display: grid;
+}
+.a-my-island-view .a-my-island-work-background-group-state-icon svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  stroke-width: 2.3px;
+}
+.a-my-island-view .a-my-island-work-background-group-state-icon.is-auto-collect {
+  border-color: #65914f;
+  color: #527d43;
+}
+.a-my-island-view .a-my-island-work-background-group-state-icon.is-members-follow {
+  border-color: #4f9a8d;
+  color: #3d746b;
+}
 .a-my-island-view .a-my-island-work-background-group-title:active { cursor: grabbing; }
 .a-my-island-view .a-my-island-work-background-group-title.is-selected {
   border-color: #f05f35;
@@ -5879,6 +5919,10 @@
   box-sizing: border-box;
   text-align: center;
 }
+.a-my-island-view .a-my-island-work-background-group-title.is-right-corner {
+  box-sizing: border-box;
+  transform: translate(-100%, -100%);
+}
 .a-my-island-view .a-my-island-group-title-size-row {
   display: flex;
   align-items: center;
@@ -5886,9 +5930,10 @@
   margin-top: 8px;
 }
 .a-my-island-view .a-my-island-group-title-size-row input { flex: 1; min-width: 0; }
-.a-my-island-view .a-my-island-group-title-style-buttons { display: flex; gap: 8px; }
+.a-my-island-view .a-my-island-group-title-style-buttons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .a-my-island-view .a-my-island-group-title-style-button {
-  width: 76px;
+  width: 100%;
+  min-width: 0;
   min-height: 72px;
   display: flex;
   flex-direction: column;
@@ -11954,6 +11999,11 @@
     inset 0 2px 0 rgb(255 255 255 / 82%);
   font-family: var(--font-interface);
 }
+.a-my-island-view .a-my-island-work-context-menu.is-node-menu {
+  box-sizing: border-box;
+  max-height: max(0px, calc(100% - 218px));
+  overflow-y: auto;
+}
 .a-my-island-work-context-title {
   padding: 5px 8px 9px;
   overflow: hidden;
@@ -12907,6 +12957,7 @@
 .a-my-island-view .a-my-island-work-background-group-opacity-range::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
+  box-sizing: border-box;
   border: 1px solid rgb(112 142 85 / 36%);
   border-radius: 999px;
   background: #dce9c2;
@@ -12918,7 +12969,8 @@
   -webkit-appearance: none;
   width: 18px;
   height: 18px;
-  margin-top: 0;
+  box-sizing: border-box;
+  margin-top: -1px;
   border: 2px solid #fffdf1;
   border-radius: 50%;
   background: #7fb66b;
@@ -13233,6 +13285,16 @@
     0 10px 24px rgb(53 82 64 / 24%),
     inset 0 1px 0 rgb(255 255 255 / 92%);
   transform: translateX(-50%);
+}
+
+.a-my-island-view .a-my-island-plugin-launcher > .a-my-island-bottom-settings-menu {
+  top: auto;
+  bottom: calc(100% + 10px);
+}
+.a-my-island-view .a-my-island-plugin-launcher > .a-my-island-bottom-settings-menu.is-open {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 68px;
 }
 
 .a-my-island-view > .a-my-island-secondary-toolbar-overlay {
@@ -14623,6 +14685,23 @@
   overflow: hidden;
 }
 
+.a-my-island-view .a-my-island-environment-settings-panel {
+  box-shadow: none;
+  contain: layout paint style;
+  backface-visibility: hidden;
+}
+.a-my-island-view .a-my-island-environment-window-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200249;
+  border-radius: 24px;
+  background: #fff5d4;
+  filter: drop-shadow(0 18px 23px rgb(48 52 34 / 38%));
+  pointer-events: none;
+}
+.a-my-island-view .a-my-island-environment-window-shadow.is-hidden { visibility: hidden; }
+
 .a-my-island-view .a-my-island-environment-panel-header {
   display: flex;
   min-height: 38px;
@@ -14700,6 +14779,10 @@
 
 .a-my-island-view .a-my-island-environment-settings-panel.is-window-manipulating .a-my-island-environment-panel-header {
   cursor: grabbing;
+}
+
+.a-my-island-view .a-my-island-environment-settings-panel.is-drag-preparing {
+  will-change: transform;
 }
 
 .a-my-island-view .a-my-island-environment-settings-panel.is-window-manipulating {
@@ -26115,6 +26198,63 @@
   box-shadow: 0 0 0 3px rgba(135, 182, 107, 0.18);
 }
 
+.a-my-island-view .a-my-island-work-details.is-sequence-details .a-my-island-sequence-item-tab-content {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+}
+
+.a-my-island-view .a-my-island-sequence-item-section {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+}
+
+.a-my-island-view .a-my-island-sequence-item-section > .a-my-island-work-edge-setting-title {
+  margin: 0;
+  color: #725535;
+  font: 700 12px/1.35 var(--font-interface);
+}
+
+.a-my-island-view .a-my-island-sequence-item-section-box {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgb(135 113 73 / 24%);
+  border-radius: 12px;
+  background: rgb(255 251 237 / 70%);
+}
+
+.a-my-island-view .a-my-island-sequence-item-section.is-danger > .a-my-island-sequence-item-section-box {
+  border-color: rgb(184 91 75 / 28%);
+  background: rgb(255 240 232 / 72%);
+}
+
+.a-my-island-view .a-my-island-work-details.is-sequence-details .a-my-island-sequence-group-toggle-grid,
+.a-my-island-view .a-my-island-work-details.is-sequence-details .a-my-island-sequence-detail-actions {
+  margin-top: 0;
+}
+
+.a-my-island-view .a-my-island-work-details.is-sequence-details .a-my-island-sequence-item-section.is-danger .a-my-island-work-edge-popover-delete {
+  min-height: 38px;
+  border: 1px solid rgb(184 91 75 / 32%);
+  border-radius: 10px;
+  background: #fbe2dd;
+  color: #a33e2e;
+  font-weight: 750;
+}
+
+.a-my-island-view .a-my-island-work-details.is-sequence-details .a-my-island-sequence-item-section.is-danger .a-my-island-work-edge-popover-delete:is(:hover, :focus-visible) {
+  border-color: #d77d6d;
+  background: #f8d3cb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgb(215 125 109 / 14%);
+}
+
 .a-my-island-view .a-my-island-sequence-create-actions,
 .a-my-island-view .a-my-island-sequence-detail-actions {
   display: flex;
@@ -27915,6 +28055,50 @@
 .a-my-island-view .a-my-island-environment-performance-tier-options { display: flex; flex-wrap: wrap; align-content: start; gap: 8px; }
 .a-my-island-view .a-my-island-environment-scene-content-column.is-performance-navigation .a-my-island-environment-scene-details-column { display: flex; }
 .a-my-island-view .a-my-island-environment-panel-header .a-my-island-environment-column-toggle:not(:last-child)::after { width: 79px; }
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-panel-header {
+  box-sizing: border-box;
+  min-height: 66px;
+  margin: -18px -18px 0;
+  padding: 10px 62px 10px 20px;
+  gap: 10px;
+  background: linear-gradient(180deg, #f1f7d9, #e4efc6);
+  border-bottom: 1px solid rgba(109, 136, 73, 0.22);
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-panel-header > .a-my-island-island-settings-title {
+  color: #5a3c20;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-island-settings-close {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-column-toggle {
+  width: 40px;
+  height: 40px;
+  flex-basis: 40px;
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-column-toggle-dot {
+  width: 40px;
+  height: 40px;
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-column-toggle.is-active .a-my-island-environment-column-toggle-dot {
+  border-color: #70a35d;
+  background: #fff9df;
+  color: #446b3c;
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-column-toggle:not(:last-child)::after {
+  left: 20px;
+  width: 87px;
+}
+.a-my-island-view .a-my-island-environment-settings-panel .a-my-island-environment-resize-handle {
+  min-width: 30px;
+  min-height: 30px;
+}
 .a-my-island-view .a-my-island-environment-single-column-scene { display: flex; box-sizing: border-box; width: 100%; flex: 0 0 auto; flex-direction: column; align-items: stretch; gap: 10px; }
 .a-my-island-view .a-my-island-environment-single-column-scene > .a-my-island-environment-mode-label { align-self: flex-start; text-align: left; }
 .a-my-island-view .a-my-island-environment-single-column-scene > .a-my-island-background-scene-mode-actions-row { align-self: flex-start; width: max-content; max-width: 100%; justify-content: flex-start; }
@@ -27944,6 +28128,13 @@
 
 .a-my-island-view .a-my-island-route-relation-section { display: grid; gap: 7px; min-width: 0; }
 .a-my-island-view .a-my-island-route-relation-section > .a-my-island-work-edge-setting-title { font-size: 12px; }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab .a-my-island-group-detail-section .a-my-island-work-detail-color-field { margin: 0; padding: 0; }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab .a-my-island-group-detail-section .a-my-island-group-title-size-row { margin: 0; }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab > .a-my-island-work-multi-panel-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab > .a-my-island-work-route-tab-content { display: grid; min-width: 0; align-content: start; gap: 9px; margin: 0; padding: 0; }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab .a-my-island-group-title-size-row { display: grid; grid-template-columns: auto minmax(0, 1fr) 42px; gap: 8px; }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab .a-my-island-group-title-size-label { color: #725335; font: 700 12px/1.35 var(--font-interface); white-space: nowrap; }
+.a-my-island-view .a-my-island-work-details.is-background-group-detail-tab .a-my-island-group-title-style-button { font: 750 11px/1.25 var(--font-interface); }
 .a-my-island-view .a-my-island-work-edge-setting-title.a-my-island-route-batch-title { font-size: 12px; }
 .a-my-island-view .a-my-island-route-relation-box .a-my-island-work-edge-popover-actions.is-route-arrow { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .a-my-island-view .a-my-island-route-relation-box .a-my-island-work-edge-popover-actions.is-route-line { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -27962,7 +28153,221 @@
 .a-my-island-view .a-my-island-route-relation-box .a-my-island-work-edge-hierarchy { margin: 0; padding: 0; border: 0; background: transparent; }
 
 .a-my-island-view .a-my-island-top-route-overlay { position: absolute; inset: 0; z-index: 4001; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+.a-my-island-view .a-my-island-journey-panel { position: absolute; left: 0; top: 0; z-index: 15000; display: flex; flex-direction: column; box-sizing: border-box; container-type: inline-size; overflow: hidden; border: 3px solid #fffbed; border-radius: 20px; background: #fff7dd; box-shadow: 0 12px 34px rgb(70 53 34 / 30%); color: #60401f; font-family: var(--font-interface); }
+.a-my-island-view .a-my-island-journey-panel.is-restoring-geometry { visibility: hidden; }
+.a-my-island-view .a-my-island-journey-header { display: flex; box-sizing: border-box; align-items: center; justify-content: space-between; flex: 0 0 66px; min-height: 66px; gap: 10px; padding: 10px 18px 10px 20px; border-bottom: 1px solid rgb(103 130 178 / 24%); background: linear-gradient(180deg, #e9efff, #d5e2f6); cursor: grab; touch-action: none; }
+.a-my-island-view .a-my-island-journey-panel.is-dragging .a-my-island-journey-header { cursor: grabbing; }
+.a-my-island-view .a-my-island-journey-title-group { display: flex; min-width: 0; align-items: center; gap: 10px; }
+.a-my-island-view .a-my-island-journey-header-icon, .a-my-island-view .a-my-island-journey-header-icon svg { display: block; width: 36px; height: 36px; flex: none; }
+.a-my-island-view .a-my-island-journey-title { overflow: hidden; color: #5a3c20; font-size: 24px; font-weight: 800; letter-spacing: .08em; text-overflow: ellipsis; white-space: nowrap; }
+.a-my-island-view .a-my-island-journey-close, .a-my-island-view .a-my-island-journey-resize { position: relative; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border-radius: 50%; }
+.a-my-island-view .a-my-island-journey-close { box-sizing: border-box; flex: none; width: 40px; height: 40px; min-width: 40px; min-height: 40px; border: 2px solid rgb(255 255 255 / 88%); background: #ef8b65; color: #fff; box-shadow: 0 4px 10px rgb(107 62 39 / 22%); }
+.a-my-island-view .a-my-island-journey-close .a-my-island-close-glyph { color: #fff; width: 16px; height: 16px; }
+.a-my-island-view .a-my-island-journey-close .a-my-island-close-glyph::before, .a-my-island-view .a-my-island-journey-close .a-my-island-close-glyph::after { width: 16px; height: 3px; }
+.a-my-island-view .a-my-island-journey-close:is(:hover, :focus-visible, :active) { background: #ef8b65; color: #fff; transform: none; }
+.a-my-island-view .a-my-island-journey-resize { position: absolute; right: 8px; bottom: 8px; z-index: 12; width: 30px; height: 30px; min-width: 30px; min-height: 30px; border: 2px solid rgb(111 141 77 / 48%); background: #fff5d3; color: #708b50; box-shadow: 0 3px 8px rgb(75 57 31 / 22%); cursor: nwse-resize; touch-action: none; }
+.a-my-island-view .a-my-island-journey-resize svg { width: 16px; height: 16px; pointer-events: none; }
+.a-my-island-view .a-my-island-journey-layout { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(180px, 300px); flex: 1; min-height: 0; }
+.a-my-island-view .a-my-island-journey-nav, .a-my-island-view .a-my-island-journey-list, .a-my-island-view .a-my-island-journey-editor { display: flex; flex-direction: column; gap: 10px; min-width: 0; overflow: auto; padding: 16px; }
+.a-my-island-view .a-my-island-journey-nav { background: #edf0d2; }
+.a-my-island-view .a-my-island-journey-panel.is-journey-home .a-my-island-journey-layout { grid-template-columns: 150px minmax(0, 1fr); }
+.a-my-island-view .a-my-island-journey-editor.is-hidden { display: none; }
+.a-my-island-view .a-my-island-journey-nav-item { display: flex; align-items: center; gap: 8px; height: auto; min-height: 40px; padding: 8px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: #725535; text-align: left; }
+.a-my-island-view .a-my-island-journey-nav .a-my-island-journey-nav-item { display: grid; box-sizing: border-box; align-self: center; justify-items: center; align-items: center; grid-template-rows: 36px minmax(0, 1fr); gap: 3px; flex: 0 0 72px; width: 76px; min-width: 76px; max-width: 76px; height: 72px; min-height: 72px; max-height: 72px; padding: 7px 4px 6px; border-color: var(--a-my-island-journey-border); background: var(--a-my-island-journey-surface); text-align: center; font-size: 11px; font-weight: 750; }
+.a-my-island-view .a-my-island-journey-nav-item.is-active { border-color: #9dbb7f; background: #dcebbd; color: #45683f; }
+.a-my-island-view .a-my-island-journey-nav-icon, .a-my-island-view .a-my-island-journey-nav-icon svg { display: block; width: 25px; height: 25px; flex: none; }
+.a-my-island-view .a-my-island-journey-hero { display: flex; align-items: center; gap: 16px; padding: 20px; border: 2px solid #fff9e8; border-radius: 18px; background: linear-gradient(120deg, #e3efc3, #fff1c5); box-shadow: 0 4px 12px rgb(104 91 58 / 12%); }
+.a-my-island-view .a-my-island-journey-hero-icon { display: grid; place-items: center; width: 54px; height: 54px; flex: none; border-radius: 17px; background: #fff6d5; color: #db9a38; }
+.a-my-island-view .a-my-island-journey-hero-icon svg { width: 30px; height: 30px; }
+.a-my-island-view .a-my-island-journey-hero-copy, .a-my-island-view .a-my-island-journey-card-copy { display: grid; gap: 5px; min-width: 0; text-align: left; }
+.a-my-island-view .a-my-island-journey-hero-title { font-size: 19px; font-weight: 850; }
+.a-my-island-view .a-my-island-journey-hero-subtitle, .a-my-island-view .a-my-island-journey-card-subtitle { color: #8b7456; font-size: 12px; line-height: 1.4; white-space: normal; }
+.a-my-island-view .a-my-island-journey-section-title { margin-top: 8px; font-size: 14px; font-weight: 800; }
+.a-my-island-view .a-my-island-journey-home-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px; }
+.a-my-island-view .a-my-island-journey-home-card { display: flex; align-items: center; gap: 10px; min-width: 0; height: auto; min-height: 88px; padding: 12px; border: 2px solid #fffbed; border-radius: 15px; background: #fff7df; box-shadow: 0 3px 8px rgb(104 91 58 / 10%); color: #60401f; }
+.a-my-island-view .a-my-island-journey-home-card:hover { border-color: #a2c38a; background: #f2f7dc; }
+.a-my-island-view .a-my-island-journey-card-icon { display: grid; place-items: center; width: 43px; height: 43px; flex: none; border-radius: 13px; background: #e6efc9; color: #729957; }
+.a-my-island-view .a-my-island-journey-card-icon svg { width: 24px; height: 24px; }
+.a-my-island-view .a-my-island-journey-card-copy { flex: 1; }
+.a-my-island-view .a-my-island-journey-card-title { font-size: 14px; font-weight: 800; }
+.a-my-island-view .a-my-island-journey-card-status { flex: none; color: #9a815d; font-size: 11px; }
+.a-my-island-view .a-my-island-journey-daily-card { display: grid; gap: 9px; padding: 16px; border: 2px solid #fffbed; border-radius: 15px; background: #fff7df; }
+.a-my-island-view .a-my-island-journey-daily-points { color: #bd8736; font-size: 12px; }
+.a-my-island-view .a-my-island-journey-heading { font-size: 14px; font-weight: 800; }
+.a-my-island-view .a-my-island-journey-plan { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 10px; background: #fffdf1; }
+.a-my-island-view .a-my-island-journey-plan { padding: 12px; border: 2px solid #fffbed; border-radius: 14px; box-shadow: 0 3px 8px rgb(104 91 58 / 10%); }
+.a-my-island-view .a-my-island-journey-list > button, .a-my-island-view .a-my-island-journey-editor > button:not(.a-my-island-journey-delete) { min-height: 38px; border: 1px solid #9dbb7f; border-radius: 10px; background: #e3efc8; color: #45683f; font-weight: 750; }
+.a-my-island-view .a-my-island-journey-board { display: flex; align-items: flex-start; gap: 12px; min-height: 0; overflow-x: auto; overflow-y: hidden; padding: 2px 2px 12px; }
+.a-my-island-view .a-my-island-journey-project-tabs { display: flex; flex: 0 0 auto; align-items: stretch; gap: 0; max-width: 100%; overflow-x: auto; padding: 2px 2px 8px; }
+.a-my-island-view .a-my-island-journey-project-tab + .a-my-island-journey-project-tab { margin-left: -12px; }
+.a-my-island-view .a-my-island-journey-project-tab { display: flex; box-sizing: border-box; flex: 0 0 76px; flex-direction: column; align-items: center; justify-content: center; gap: 3px; width: 76px; min-width: 76px; height: 72px; min-height: 72px; padding: 5px; border: 1px solid var(--a-my-island-journey-border); border-radius: 10px; background: var(--a-my-island-journey-surface); color: var(--a-my-island-journey-text); font-size: 11px; font-weight: 750; }
+.a-my-island-view .a-my-island-journey-project-tab.is-active { border-color: var(--a-my-island-journey-icon-green); background: var(--a-my-island-journey-green-soft); color: var(--a-my-island-journey-green); }
+.a-my-island-view .a-my-island-journey-project-tab.is-create { border-style: dashed; }
+.a-my-island-view .a-my-island-journey-project-icon, .a-my-island-view .a-my-island-journey-project-icon svg { display: block; width: 25px; height: 25px; flex: none; }
+.a-my-island-view .a-my-island-journey-project-caption { display: -webkit-box; max-width: 100%; overflow: hidden; line-height: 1.2; text-overflow: ellipsis; white-space: normal; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.a-my-island-view .a-my-island-journey-project-tab { position: relative; flex: 0 0 106px; width: 106px; min-width: 106px; height: 132px; min-height: 132px; gap: 4px; padding: 7px 7px 10px; border: 3px solid var(--a-my-island-journey-raised); border-radius: 48% 48% 38% 38% / 38% 38% 26% 26%; background: var(--a-my-island-journey-surface); box-shadow: var(--a-my-island-journey-shadow); }
+.a-my-island-view .a-my-island-journey-project-tab.is-active { border-color: var(--a-my-island-journey-icon-green); background: var(--a-my-island-journey-green-soft); }
+.a-my-island-view .a-my-island-journey-project-tab, .a-my-island-view .a-my-island-journey-project-tab.is-active { isolation: isolate; flex-basis: 156px; width: 156px; min-width: 156px; height: 176px; min-height: 176px; padding: 29px 10px 14px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.a-my-island-view .a-my-island-journey-footprint { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 3px 5px rgb(91 105 79 / 14%)); pointer-events: none; }
+.a-my-island-view .a-my-island-journey-footprint path { fill: var(--a-my-island-journey-surface); stroke: var(--a-my-island-journey-raised); stroke-width: 3; stroke-linejoin: round; }
+.a-my-island-view .a-my-island-journey-project-tab.is-active .a-my-island-journey-footprint path { fill: var(--a-my-island-journey-green-soft); stroke: var(--a-my-island-journey-icon-green); }
+.a-my-island-view .a-my-island-journey-project-tab.is-create .a-my-island-journey-footprint path { stroke-dasharray: 4 3; }
+.a-my-island-view .a-my-island-journey-project-badge { position: relative; display: grid; place-items: center; flex: none; width: 90px; height: 90px; border-radius: 50%; background: var(--a-my-island-journey-raised); }
+.a-my-island-view .a-my-island-journey-project-tab:not(.is-create) .a-my-island-journey-project-badge { position: absolute; top: 39px; left: 50%; transform: translateX(-50%); }
+.a-my-island-view .a-my-island-journey-project-tab:not(.is-create) .a-my-island-journey-project-caption { position: absolute; top: 134px; right: 12px; left: 12px; max-height: 2.4em; text-align: center; overflow-wrap: anywhere; }
+.a-my-island-view .a-my-island-journey-project-ring { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.a-my-island-view .a-my-island-journey-project-ring circle { fill: none; stroke-width: 6; }
+.a-my-island-view .a-my-island-journey-project-ring .is-track { stroke: var(--a-my-island-journey-border); }
+.a-my-island-view .a-my-island-journey-project-ring .is-progress { stroke: var(--a-my-island-journey-icon-green); stroke-linecap: round; }
+.a-my-island-view .a-my-island-journey-project-art { display: block; width: 60px; height: 60px; object-fit: contain; }
+.a-my-island-view .a-my-island-journey-project-progress { position: absolute; right: 5px; bottom: 2px; padding: 1px 4px; border-radius: 999px; background: var(--a-my-island-journey-surface); color: var(--a-my-island-journey-text); font-size: 10px; font-weight: 800; line-height: 1.2; }
+.a-my-island-view .a-my-island-journey-board-card { box-sizing: border-box; flex: 0 0 280px; max-width: 100%; padding: 12px; border: 2px solid #fffbed; border-radius: 16px; background: #f5ebcc; box-shadow: 0 3px 10px rgb(104 91 58 / 14%); }
+.a-my-island-view .a-my-island-journey-board-card-header { display: flex; align-items: center; gap: 7px; padding: 4px 2px 10px; border-bottom: 1px solid rgb(135 113 73 / 22%); }
+.a-my-island-view .a-my-island-journey-board-card-title { flex: 1; min-width: 0; height: auto; padding: 4px; color: #60401f; font-size: 14px; font-weight: 800; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+.a-my-island-view .a-my-island-journey-board-tasks { position: relative; display: grid; gap: 8px; padding-top: 10px; }
+.a-my-island-view .a-my-island-journey-board-tasks::before { position: absolute; top: 25px; bottom: 20px; left: 15px; width: 2px; border-radius: 2px; background: #a5c68c; content: ""; }
+.a-my-island-view .a-my-island-journey-board-empty { padding: 12px 4px 3px; color: #8b7456; font-size: 11px; }
+.a-my-island-view .a-my-island-journey-task-branch { min-width: 0; }
+.a-my-island-view .a-my-island-journey-task-line { position: relative; display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: center; gap: 8px; }
+.a-my-island-view .a-my-island-journey-task-children { display: grid; gap: 8px; margin: 8px 0 0 15px; padding-left: 10px; border-left: 2px solid #bfd19c; }
+.a-my-island-view .a-my-island-journey-board-card .a-my-island-journey-plan { gap: 6px; padding: 8px; }
+.a-my-island-view .a-my-island-journey-task-number { display: grid; place-items: center; box-sizing: border-box; width: 32px; height: 32px; padding: 2px; border: 2px solid #fffdf1; border-radius: 50%; background: #7eb66c; box-shadow: 0 1px 4px rgb(70 98 52 / 30%); color: #fff; font: 800 11px/1 var(--font-interface); text-align: center; }
+.a-my-island-view .a-my-island-journey-first-task { min-width: 0; min-height: 38px; height: auto; padding: 8px; border: 1px dashed #a4bd8d; border-radius: 10px; background: #fffdf1; color: #789266; text-align: left; white-space: normal; }
+.a-my-island-view .a-my-island-journey-add-sibling, .a-my-island-view .a-my-island-journey-add-task { display: block; height: auto; min-height: 28px; padding: 4px 8px; border: 1px dashed #a4bd8d; border-radius: 9px; background: #f3f7df; color: #557a47; font-size: 11px; font-weight: 700; }
+.a-my-island-view .a-my-island-journey-add-sibling { margin: 5px 0 0 40px; }
+.a-my-island-view .a-my-island-journey-add-task { width: 100%; margin-top: 10px; }
+.a-my-island-view .a-my-island-journey-plan > .a-my-island-journey-task-name { flex: 1; min-width: 0; height: auto; padding: 4px; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+.a-my-island-view .a-my-island-journey-add-child { display: grid; place-items: center; flex: none; width: 26px; height: 26px; padding: 4px; border-radius: 8px; color: #658b51; }
+.a-my-island-view .a-my-island-journey-add-child svg { width: 16px; height: 16px; }
+.a-my-island-view .a-my-island-journey-editor :is(input, textarea, select) { width: 100%; box-sizing: border-box; border: 1px solid rgb(137 110 75 / 25%); border-radius: 9px; background: rgb(255 255 255 / 55%); color: #60401f; }
+.a-my-island-view .a-my-island-journey-editor textarea { min-height: 110px; }
+.a-my-island-view .a-my-island-journey-setting-label { color: var(--a-my-island-journey-secondary); font-size: 12px; font-weight: 750; }
+.a-my-island-view .a-my-island-journey-setting-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.a-my-island-view .a-my-island-journey-setting-choice { display: flex; box-sizing: border-box; flex: 0 0 68px; width: 68px; height: 68px; align-items: center; justify-content: center; flex-direction: column; gap: 3px; padding: 5px 3px; border: 1px solid var(--a-my-island-journey-border); border-radius: 10px; background: var(--a-my-island-journey-surface); color: var(--a-my-island-journey-text); font-size: 11px; font-weight: 750; line-height: 1.2; }
+.a-my-island-view .a-my-island-journey-setting-choice.is-active, .a-my-island-view .a-my-island-journey-setting-choice.is-save { border-color: var(--a-my-island-journey-border-green); background: var(--a-my-island-journey-green-soft); color: var(--a-my-island-journey-green); }
+.a-my-island-view .a-my-island-journey-setting-choice.is-delete { border-color: #e6b9af; background: var(--a-my-island-journey-danger-bg); color: var(--a-my-island-journey-danger); }
+.a-my-island-view .a-my-island-journey-setting-icon, .a-my-island-view .a-my-island-journey-setting-icon svg, .a-my-island-view .a-my-island-journey-setting-art { display: block; width: 25px; height: 25px; flex: none; object-fit: contain; }
+.a-my-island-view .a-my-island-journey-editor > .a-my-island-journey-icon-select { display: flex; align-items: center; gap: 9px; min-height: 54px; padding: 6px 10px; border-color: var(--a-my-island-journey-border); background: var(--a-my-island-journey-surface); color: var(--a-my-island-journey-text); text-align: left; }
+.a-my-island-view .a-my-island-journey-icon-select > span:not(.a-my-island-journey-setting-icon) { flex: 1; }
+.a-my-island-view .a-my-island-journey-icon-select .a-my-island-journey-setting-art { width: 40px; height: 40px; }
+.a-my-island-view .a-my-island-journey-editor.is-choosing-icon > :not(.a-my-island-journey-icon-picker) { display: none; }
+.a-my-island-view .a-my-island-journey-icon-picker { min-width: 0; }
+.a-my-island-view .a-my-island-journey-icon-picker-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.a-my-island-view .a-my-island-journey-icon-picker-back { display: flex; align-items: center; gap: 4px; min-height: 32px; padding: 5px 8px; border: 1px solid var(--a-my-island-journey-border); border-radius: 9px; background: var(--a-my-island-journey-surface); color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-icon-picker-back-icon, .a-my-island-view .a-my-island-journey-icon-picker-back-icon svg { display: block; width: 16px; height: 16px; }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-picker-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; padding: 2px 2px 10px; background: transparent; }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-picker-tab { min-width: 0; min-height: 34px; padding: 5px 3px; border-radius: 9px; white-space: normal; }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-picker-content { padding: 10px 2px 4px; overflow: visible; }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-picker-grid { grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); gap: 8px; }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-choice { min-width: 0; min-height: 82px; padding: 6px; border-radius: 13px; }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-choice.is-active { border-color: #82ad70; background: rgb(225 242 211 / 88%); box-shadow: 0 0 0 3px rgb(116 163 95 / 16%); }
+.a-my-island-view .a-my-island-journey-icon-picker .a-my-island-home-icon-choice img { width: 52px; max-width: 100%; height: 44px; }
+.a-my-island-view .a-my-island-journey-list :is(input, select) { width: 100%; box-sizing: border-box; border: 1px solid rgb(137 110 75 / 25%); border-radius: 9px; background: rgb(255 255 255 / 55%); color: #60401f; }
+.a-my-island-view .a-my-island-journey-list :is(input, select):focus { outline: none; border-color: #94b875; box-shadow: 0 0 0 3px rgb(148 184 117 / 20%); }
+.a-my-island-view .a-my-island-journey-delete { background: #fbe2dd; color: #a64f43; }
+.a-my-island-view .a-my-island-journey-confirm-overlay { z-index: 16000; }
+.a-my-island-view .a-my-island-journey-editor :is(input, textarea, select):focus { outline: none; border-color: #94b875; box-shadow: 0 0 0 3px rgb(148 184 117 / 20%); }
+.a-my-island-view .a-my-island-journey-panel:is(.is-dragging, .is-resizing) { will-change: transform; box-shadow: none; }
+.a-my-island-view .a-my-island-journey-panel:is(.is-dragging, .is-resizing) .a-my-island-journey-layout { pointer-events: none; }
+@container (max-width: 620px) { .a-my-island-view .a-my-island-journey-layout { grid-template-columns: 100px minmax(0, 1fr) minmax(150px, 1fr); } .a-my-island-view .a-my-island-journey-panel.is-journey-home .a-my-island-journey-layout { grid-template-columns: 100px minmax(0, 1fr); } .a-my-island-view .a-my-island-journey-nav { padding: 10px 5px; } .a-my-island-view .a-my-island-journey-nav-item { gap: 4px; font-size: 11px; } }
+
+/* 岛程内容区语义色，局限于岛程窗口。 */
+.a-my-island-view .a-my-island-journey-panel {
+  --a-my-island-journey-bg: #eaf4f8;
+  --a-my-island-journey-nav-bg: #f2f8ec;
+  --a-my-island-journey-surface: #fff7e6;
+  --a-my-island-journey-raised: #fffcf5;
+  --a-my-island-journey-muted-surface: #f8f4ea;
+  --a-my-island-journey-text: #443d35;
+  --a-my-island-journey-secondary: #766b5d;
+  --a-my-island-journey-muted: #766b5d;
+  --a-my-island-journey-border: #e8ddbd;
+  --a-my-island-journey-border-green: #cbe3b5;
+  --a-my-island-journey-green: #4e7845;
+  --a-my-island-journey-green-soft: #e4f0d9;
+  --a-my-island-journey-icon-green: #659b56;
+  --a-my-island-journey-gold: #986a31;
+  --a-my-island-journey-danger-bg: #f9e4df;
+  --a-my-island-journey-danger: #a84f45;
+  --a-my-island-journey-focus: #528fae;
+  --a-my-island-journey-shadow: 0 4px 12px rgb(91 105 79 / 10%);
+  --a-my-island-journey-hero-start: #dceef7;
+  --a-my-island-journey-hero-end: #c9e3f5;
+}
+.theme-dark .a-my-island-view .a-my-island-journey-panel {
+  --a-my-island-journey-bg: #202e2b;
+  --a-my-island-journey-nav-bg: #263832;
+  --a-my-island-journey-surface: #2b3b36;
+  --a-my-island-journey-raised: #354941;
+  --a-my-island-journey-muted-surface: #30413a;
+  --a-my-island-journey-text: #f3f0e5;
+  --a-my-island-journey-secondary: #c2c9b8;
+  --a-my-island-journey-muted: #c2c9b8;
+  --a-my-island-journey-border: #4a5d50;
+  --a-my-island-journey-border-green: #5b705f;
+  --a-my-island-journey-green: #b9d995;
+  --a-my-island-journey-green-soft: #314a38;
+  --a-my-island-journey-icon-green: #a8d17c;
+  --a-my-island-journey-gold: #f0d49a;
+  --a-my-island-journey-danger-bg: #503632;
+  --a-my-island-journey-danger: #ebaeaa;
+  --a-my-island-journey-focus: #a8d0f2;
+  --a-my-island-journey-shadow: 0 4px 12px rgb(0 0 0 / 18%);
+  --a-my-island-journey-hero-start: #2d4650;
+  --a-my-island-journey-hero-end: #354941;
+}
+.a-my-island-view .a-my-island-journey-layout { background: var(--a-my-island-journey-bg); color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-nav { background: var(--a-my-island-journey-nav-bg); }
+.a-my-island-view .a-my-island-journey-editor { background: var(--a-my-island-journey-muted-surface); }
+.a-my-island-view .a-my-island-journey-nav-item { color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-nav .a-my-island-journey-nav-item.is-active { background: var(--a-my-island-journey-green-soft); border-color: var(--a-my-island-journey-border-green); color: var(--a-my-island-journey-green); }
+.a-my-island-view .a-my-island-journey-hero { background: linear-gradient(135deg, var(--a-my-island-journey-hero-start), var(--a-my-island-journey-hero-end)); border-color: var(--a-my-island-journey-border); box-shadow: var(--a-my-island-journey-shadow); }
+.a-my-island-view .a-my-island-journey-hero-icon, .a-my-island-view .a-my-island-journey-card-icon { background: var(--a-my-island-journey-green-soft); color: var(--a-my-island-journey-green); }
+.a-my-island-view .a-my-island-journey-hero-subtitle, .a-my-island-view .a-my-island-journey-card-subtitle, .a-my-island-view .a-my-island-journey-card-status, .a-my-island-view .a-my-island-journey-board-empty { color: var(--a-my-island-journey-secondary); }
+.a-my-island-view .a-my-island-journey-home-card, .a-my-island-view .a-my-island-journey-daily-card, .a-my-island-view .a-my-island-journey-board-card { background: var(--a-my-island-journey-surface); border-color: var(--a-my-island-journey-border); box-shadow: var(--a-my-island-journey-shadow); color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-home-card:is(:hover, :focus-visible) { background: var(--a-my-island-journey-green-soft); border-color: var(--a-my-island-journey-icon-green); }
+.a-my-island-view .a-my-island-journey-plan, .a-my-island-view .a-my-island-journey-first-task { background: var(--a-my-island-journey-raised); border-color: var(--a-my-island-journey-border); box-shadow: var(--a-my-island-journey-shadow); color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-board-card-title, .a-my-island-view .a-my-island-journey-task-name { color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-board-card-header { border-color: var(--a-my-island-journey-border); }
+.a-my-island-view .a-my-island-journey-task-children { border-color: var(--a-my-island-journey-border-green); }
+.a-my-island-view .a-my-island-journey-board-tasks::before { background: var(--a-my-island-journey-icon-green); }
+.a-my-island-view .a-my-island-journey-task-number { background: var(--a-my-island-journey-green); border-color: var(--a-my-island-journey-raised); color: var(--a-my-island-journey-raised); }
+.theme-dark .a-my-island-view .a-my-island-journey-task-number { color: #26352b; }
+.a-my-island-view .a-my-island-journey-daily-points { color: var(--a-my-island-journey-gold); }
+.a-my-island-view .a-my-island-journey-add-child, .a-my-island-view .a-my-island-journey-add-sibling, .a-my-island-view .a-my-island-journey-add-task, .a-my-island-view .a-my-island-journey-list > button, .a-my-island-view .a-my-island-journey-editor > button:not(.a-my-island-journey-delete) { background: var(--a-my-island-journey-green-soft); border-color: var(--a-my-island-journey-border-green); color: var(--a-my-island-journey-green); }
+.a-my-island-view .a-my-island-journey-delete { background: var(--a-my-island-journey-danger-bg); color: var(--a-my-island-journey-danger); }
+.a-my-island-view .a-my-island-journey-layout :is(input, textarea, select) { background: var(--a-my-island-journey-raised); border-color: var(--a-my-island-journey-border); color: var(--a-my-island-journey-text); }
+.a-my-island-view .a-my-island-journey-layout :is(input, textarea)::placeholder { color: var(--a-my-island-journey-secondary); opacity: 1; }
+.a-my-island-view .a-my-island-journey-layout :is(button, input, textarea, select):focus-visible { outline: 2px solid var(--a-my-island-journey-focus); outline-offset: 2px; }
+.a-my-island-view .a-my-island-journey-layout button:disabled { opacity: .65; cursor: not-allowed; }
+.a-my-island-view .a-my-island-home-graph.is-home-lines-hidden .a-my-island-top-route-overlay { visibility: hidden; }
 .a-my-island-view .a-my-island-top-route-labels { position: absolute; inset: 0; z-index: 4003; overflow: hidden; pointer-events: none; }
+
+/* All route label hosts, including pinned labels, share the motion visibility rule. */
+.a-my-island-view :is(.a-my-island-home-graph, .a-my-island-workspace):is(.is-viewport-moving, .is-node-dragging, .is-background-group-dragging)
+  :is(.a-my-island-home-edge-labels-layer, .a-my-island-work-edge-labels-layer, .a-my-island-top-route-labels) {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* The idle connector is local fixed geometry. Only connection dragging needs a graph path. */
+.a-my-island-view :is(.a-my-island-home-connect-handle, .a-my-island-work-node-control.is-connect-handle)::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: calc(23px * var(--a-my-island-control-scale));
+  border-left: 2px dashed #e9693d;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.a-my-island-view .a-my-island-home-connect-handle::after {
+  height: max(0px, calc(32px - max(10px, 11px * var(--a-my-island-control-scale))));
+}
+.a-my-island-view :is(.a-my-island-home-connect-handle, .a-my-island-work-node-control.is-connect-handle).is-dragging-connection::after {
+  display: none;
+}
 .a-my-island-view .a-my-island-work-sequence-edges-layer { z-index: 4002; }
 .a-my-island-view .a-my-island-route-top-button { display: grid; grid-template-rows: 36px 1fr; place-items: center; gap: 3px; box-sizing: border-box; width: 76px; height: 72px; padding: 7px 4px 6px; border: 1px solid #dcc89c; border-radius: 10px; background: #fff9e8; color: #725535; font-size: 11px; font-weight: 750; }
 .a-my-island-view .a-my-island-route-top-button.is-active { border-color: #83aa72; background: #e4f0cb; color: #45683f; }
