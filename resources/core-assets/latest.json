@@ -1,6 +1,6 @@
 {
   "packageId": "a-my-island-core-assets",
-  "latestVersion": "1.0.1",
+  "latestVersion": "1.0.2",
   "base": {
     "version": "1.0.0",
     "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-v1.0.0/core-assets-v1.0.0.manifest.json"
@@ -10,6 +10,11 @@
       "fromVersion": "1.0.0",
       "toVersion": "1.0.1",
       "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-patch-v1.0.0-to-v1.0.1/core-assets-patch-v1.0.0-to-v1.0.1.manifest.json"
+    },
+    {
+      "fromVersion": "1.0.1",
+      "toVersion": "1.0.2",
+      "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-patch-v1.0.1-to-v1.0.2/core-assets-patch-v1.0.1-to-v1.0.2.manifest.json"
     }
   ]
 }
