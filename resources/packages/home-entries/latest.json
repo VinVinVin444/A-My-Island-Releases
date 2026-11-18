@@ -1,6 +1,6 @@
 {
   "packageId": "a-my-island-core-assets-home-entries",
-  "latestVersion": "1.0.2",
+  "latestVersion": "1.0.3",
   "base": {
     "version": "1.0.0",
     "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-home-entries-v1.0.0/core-assets-home-entries-v1.0.0.manifest.json"
@@ -15,6 +15,11 @@
       "fromVersion": "1.0.1",
       "toVersion": "1.0.2",
       "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-home-entries-patch-v1.0.1-to-v1.0.2/core-assets-home-entries-patch-v1.0.1-to-v1.0.2.manifest.json"
+    },
+    {
+      "fromVersion": "1.0.2",
+      "toVersion": "1.0.3",
+      "manifestUrl": "https://github.com/VinVinVin444/A-My-Island-Releases/releases/download/core-assets-home-entries-patch-v1.0.2-to-v1.0.3/core-assets-home-entries-patch-v1.0.2-to-v1.0.3.manifest.json"
     }
   ]
 }
